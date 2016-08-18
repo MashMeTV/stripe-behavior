@@ -20,10 +20,18 @@
 
     <script>
       suite('stripe-element', function() {
+        var element;
+
+        setup(function(){
+          element = fixture('basic');
+        });
 
         test('instantiating the element works', function() {
-          var element = fixture('basic');
           assert.equal(element.is, 'stripe-element');
+        });
+
+        test('Stripe library is loaded', function() {
+          assert(Stripe);
         });
 
       });
