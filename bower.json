@@ -1,11 +1,11 @@
 {
-  "name": "stripe-element",
+  "name": "stripe-behavior",
   "version": "0.1.0",
   "authors": [
     "Enrique Garcia Navalon <garcianavalon@gmail.com>"
   ],
   "description": "Element wrapper for the Stripe library",
-  "main": "stripe-element.html",
+  "main": "stripe-behavior.html",
   "repository": {
     "type": "git",
     "url": "git://github.com/MashMeTV/stripe-element.git"
