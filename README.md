@@ -1,18 +1,27 @@
-# \<stripe-element\>
+# \<stripe-behavior\>
 
-Element wrapper for the Stripe library
+Behavior wrapper for the Stripe library. Add it to your Polymer elements to access the Stripe client-side API.
 
 ## Install
 
 ```
-$ bower install stripe-element
+$ bower install stripe-behavior
 ```
 
 ## Use
 ```html
-<stripe-element>
-<!-- Your stripe-dependent code here -->
-</stripe-element>
+<link rel="import" href="stripe-behavior.html">
+
+<script>
+  Polymer({
+    is: 'my-element',
+    behaviors: [StripeBehavior],
+
+    attached: function(){
+      this.Stripe.setPublishableKey('pk_test_EUkfRZwz4TXS3ujwC4GNRIUy');
+    },
+  });
+</script>
 ```
 
 ## Running Tests
