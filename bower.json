@@ -8,10 +8,10 @@
   "main": "stripe-behavior.html",
   "repository": {
     "type": "git",
-    "url": "git://github.com/MashMeTV/stripe-element.git"
+    "url": "git://github.com/MashMeTV/stripe-behavior.git"
   },
   "license": "MIT",
-  "homepage": "https://github.com/github.com/MashMeTV/stripe-element",
+  "homepage": "https://github.com/github.com/MashMeTV/stripe-behavior",
   "keywords": [
     "web-component",
     "polymer",
