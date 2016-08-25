@@ -18,7 +18,6 @@ Behavior wrapper for the Stripe library
     properties: {
       Stripe: {
         type: Object,
-        value: Stripe,
         readOnly: true,  
       },
 
@@ -32,7 +31,7 @@ Behavior wrapper for the Stripe library
     },
 
     _stripeExists: function(){
-      return Stripe && (typeof Stripe != "undefined");
+      return typeof Stripe != "undefined";
     },
 
     _loadStripe: function(){
