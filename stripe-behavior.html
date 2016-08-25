@@ -5,7 +5,6 @@ This code may only be used under the MIT style license found at LICENSE.md
 -->
 
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="./stripe-import.html">
 
 <!--
 `stripe-behavior`
@@ -22,6 +21,34 @@ Behavior wrapper for the Stripe library
         value: Stripe,
         readOnly: true,  
       },
+
+      publisheableKey: {
+        type: String
+      }
+    },
+
+    _initStripe: function(){
+      this.Stripe.setPublishableKey(this.publisheableKey);
+    },
+
+    _stripeExists: function(){
+      return Stripe && (typeof Stripe != "undefined");
+    },
+
+    _loadStripe: function(){
+      if(!this._stripeExists()){
+        var script = document.createElement('script');
+        script.src = "https://js.stripe.com/v2/";
+        document.body.appendChild(script);
+      }
+    },
+
+    attached: function(){   
+      this._initStripe();
+    },
+
+    created: function() {
+      this._loadStripe();
     },
 
 
