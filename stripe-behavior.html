@@ -18,7 +18,6 @@ Behavior wrapper for the Stripe library
     properties: {
       Stripe: {
         type: Object,
-        readOnly: true,  
       },
 
       publisheableKey: {
@@ -27,6 +26,7 @@ Behavior wrapper for the Stripe library
     },
 
     _initStripe: function(){
+      this.Stripe = Stripe;
       this.Stripe.setPublishableKey(this.publisheableKey);
     },
 
@@ -35,21 +35,19 @@ Behavior wrapper for the Stripe library
     },
 
     _loadStripe: function(){
-      if(!this._stripeExists()){
-        var script = document.createElement('script');
-        script.src = "https://js.stripe.com/v2/";
-        document.body.appendChild(script);
+      if(this._stripeExists()){
+        return;
       }
-    },
 
-    attached: function(){   
-      this._initStripe();
+      var script = document.createElement('script');
+      script.src = "https://js.stripe.com/v2/";
+      document.body.appendChild(script);
+      script.onload = this._initStripe.bind(this);
     },
 
     created: function() {
       this._loadStripe();
     },
 
-
-  }
+  };
 </script>
