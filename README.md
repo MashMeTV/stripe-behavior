@@ -17,12 +17,20 @@ $ bower install stripe-behavior
     is: 'my-element',
     behaviors: [StripeBehavior],
 
-    attached: function(){
-      this.Stripe.setPublishableKey('pk_test_EUkfRZwz4TXS3ujwC4GNRIUy');
+    properties: {
+
+      publisheableKey: {
+        type: String,
+        value: 'pk_test_EUkfRZwz4TXS3ujwC4GNRIUy',
+      }
     },
   });
 </script>
 ```
+
+## Contact & Support
+
+Open an issue in this repo or tweet/github metion @garcianavalon
 
 ## Running Tests
 
